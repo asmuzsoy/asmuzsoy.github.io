@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif; font-size: 25px}
 body, html {
   height: 100%;
   color: #FFF;
@@ -16,7 +16,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,8 +41,14 @@ body, html {
   min-height: 400px;
 }
 
-/* Third image (Contact) */
+/* Second image (Skills) */
 .bgimg-4 {
+  background-image: url("images/physics2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-5 {
   background-image: url("/w3images/parallax3.jpg");
   min-height: 400px;
 }
@@ -96,36 +102,21 @@ body, html {
 </div>
 
 <!-- Container (About Section) -->
+
+
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>Physics.  Computer Science.  Learning. </em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p class="w3-center"><em>Science. Programming. Learning. </em></p>
   <div class="w3-row">
+
     <div class="w3-col m6 w3-center w3-padding-large">
       <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>My name is Ana Sofia, and I'm a senior at North Carolina State University studying physics and computer science. I'm interesting in writing code to understand the world around us, and I love learning about everything.</p>
     </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
   </div>
 </div>
 
@@ -138,45 +129,25 @@ body, html {
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+  <p class="w3-center">I've done work in machine learning, atmospheric science, computational biology, astrophysics, and more. <br> Click each image to learn more.</p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="images/tensorflow.png" style="width:100%" onclick="onClick(this)" alt="During the summer of 2020, I completed a Software Engineering Internship at Google, where I worked on the TensorFlow and Kaggle teams. My project involved creating high-quality Kaggle notebook examples using TensorFlow 2, focusing on applying deep learning to Natural Language Processing (NLP). Over the course of my internship, I created 20 Kaggle notebooks demonstrating how to use machine learning for text classification, generation, and extraction. I also led the launch of a new multilingual NLP-focused competition on Kaggle (titled Contradictory My Dear Watson), and created TensorFlow code snippets that were incorporated into the Code Help section of the Kaggle Notebooks interface. ">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="images/iss.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="In the summer of 2019, I interned at NASA Langley Research Center, working on SAGE III ISS (Stratospheric Aerosol & Gas Experiment III on the International Space Station). SAGE III is an experimental apparatus currently on the ISS that measures the components of Earth’s atmosphere. My project focused on developing a machine learning pipeline to identify cloud interference in measurements of stratospheric aerosol. The project involved creating machine learning algorithms in Python, training them on old data, and testing how accurately they recognized clouds in new data that they had never seen before. Eventually, this procedure will be incorporated into the official generalized data product for the instrument, and can be used to improve future analyses.">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="images/pombe.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="I am working with Dr. Mary Elting in the physics department at NC State on developing computational tools to automatically track the length of S. pombe (fission yeast). Yeast cells get longer as they grow and divide, and we're interested in measuring the length over time of the mitotic spindle, which pushes the chromosomes to the ends of the cell. I've developed an algorithm that measures the spindle length reliably in nearly every frame of a video of the cell dividing, and have implemented it in a plugin for ImageJ, an image processing software widely used in the biological sciences. This plugin allows a user to upload a video of a cell dividing, and outputs a file of the spindle length in each frame, all in seconds.">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="images/exoplanet2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="I am working with Dr. Leslie Rogers in the Department of Astronomy and Astrophysics at the University of Chicago to calculate an updated mass and radius distribution for ultra-short period (USP) exoplanets. These unique planets have orbital periods, or “years”, less than 1 Earth day. These distributions could provide interesting clues as to the planets' formation mechanisms, as well as allow us to characterize a broad diversity of exoplanets.">
     </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
   </div>
 </div>
 
@@ -184,8 +155,8 @@ body, html {
 <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
   <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
+    <img id="img01" class="w3-image" style="width:30%">
+    <p id="caption" class="w3-large"> </p>
   </div>
 </div>
 
@@ -204,43 +175,25 @@ body, html {
   <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
     qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
-    </div>
+</div>
 
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+<!-- Fourth Parallax Image with Resume Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min" id="cv">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">RESUME</span>
   </div>
 </div>
 
+
 <!-- Third Parallax Image with Skills Text -->
-<div class="w3-content w3-container w3-padding-64" id="cv">
-    <h1>Resume</h1>
+<div class="w3-content w3-container w3-padding-64">
 	<p>Click here to download my <a href="Uzsoy_Resume.pdf">one-page resume</a>.</p>
 	<p>Click here to download my <a href="CV.pdf"> longer CV</a>.</p>
 </iframe> 
 </div>
 
 
-<!-- Third Parallax Image with Portfolio Text -->
+<!-- Fourth Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
@@ -292,7 +245,7 @@ body, html {
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a> and myself.</p>
 </footer>
  
 <script>
