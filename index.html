@@ -56,6 +56,56 @@ body, html {
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
+ /* The grid: Three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-radius: 25px;
+  border-width: 10px;
+}
+
+.containerTab {
+  padding: 20px;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-radius: 25px;
+  border-width: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+} 
+
+.tab { 
+       display:inline-block; 
+       margin-left: 100px; 
+}
+
+ul {
+  columns: 3;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -133,7 +183,7 @@ body, html {
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
+    <div class="w3-col m3 w3-hover-opacity">
       <img src="images/tensorflow.png" style="width:100%" onclick="onClick(this)" alt="During the summer of 2020, I completed a Software Engineering Internship at Google, where I worked on the TensorFlow and Kaggle teams. My project involved creating high-quality Kaggle notebook examples using TensorFlow 2, focusing on applying deep learning to Natural Language Processing (NLP). Over the course of my internship, I created 20 Kaggle notebooks demonstrating how to use machine learning for text classification, generation, and extraction. I also led the launch of a new multilingual NLP-focused competition on Kaggle (titled Contradictory My Dear Watson), and created TensorFlow code snippets that were incorporated into the Code Help section of the Kaggle Notebooks interface. ">
     </div>
 
@@ -171,10 +221,65 @@ body, html {
 <!-- Container (Skills Section) -->
 <div class="w3-content w3-container w3-padding-64" id="skills">
   <h3 class="w3-center">SKILLS</h3>
-  <p class="w3-center"><em>Physics.  Computer Science.  Learning. </em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+     <!-- The grid: three columns -->
+<div class="row">
+  <div class="column w3-hover-opacity" onclick="openTab('b1');" style="background:#3399CC;">Programming</div>
+  <div class="column w3-hover-opacity" onclick="openTab('b2');" style="background:#993366;">Technologies</div>
+  <div class="column w3-hover-opacity" onclick="openTab('b3');" style="background:#666666;">Miscellanous</div>
+</div>
+
+<!-- The expanding grid (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:#3399CC">
+  <!-- If you want the ability to close the container, add a close button -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <b>Programming Languages</b>
+  <ul class="columns" data-columns="3">
+  <li>Python</li>
+  <li>C/C++</li>
+  <li>Java</li>
+  <li>R</li>
+  <li>MATLAB</li>
+  <li>LaTeX</li>
+  <li>HTML/CSS</li>
+  <li>Angular.js</li>
+  <li>Assembly</li>
+</ul>
+  <b>Machine Learning Libraries</b>
+  <ul class="columns" data-columns="3">
+  <li>scikit-learn</li>
+  <li>TensorFlow</li>
+  <li>PyTorch</li>
+</ul>
+
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:#993366">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <ul class="columns" data-columns="3">
+  <li>Git/GitHub</li>
+  <li>UNIX</li>
+  <li>Bash</li>
+  <li>Vim</li>
+  <li>Maven</li>
+  <li>JUnit</li>
+  <li>FIJI/ImageJ</li>
+  <li>LabView</li>
+</ul>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:#666666">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Miscellaneous</h2>
+  <ul class="columns" data-columns="3">
+  <li>Spanish</li>
+  <li>Soldering</li>
+  <li>Circuit Wiring</li>
+  <li>Bacterial Culture</li>
+  <li>Gel Electrophoresis</li>
+  <li>Sterile Technique</li>
+</ul>
+</div> 
 </div>
 
 <!-- Fourth Parallax Image with Resume Text -->
@@ -256,6 +361,16 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
+// Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+} 
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
