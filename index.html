@@ -31,7 +31,7 @@ body, html {
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("images/coding.jpg");
+  background-image: url("images/horseheadx.jpg");
   min-height: 400px;
 }
 
@@ -99,6 +99,8 @@ body, html {
        display:inline-block; 
        margin-left: 100px; 
 }
+.w3-display-topmiddle2{position:absolute;left:50%;top:25%;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-topmiddle3{position:absolute;left:50%;top:35%;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
 
 ul {
   columns: 3;
@@ -124,8 +126,6 @@ ul {
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PROJECTS</a>
-    <a href="#skills" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-wrench"></i> SKILLS </a>
     <a href="#cv" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-paperclip"></i> CV </a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
   </div>
@@ -133,8 +133,6 @@ ul {
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJECTS</a>
-    <a href="#skills" class="w3-bar-item w3-button" onclick="toggleFunction()">SKILLS</a>
     <a href="#cv" class="w3-bar-item w3-button" onclick="toggleFunction()">CV</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
@@ -142,114 +140,88 @@ ul {
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ANA SOFIA UZSOY</span>
+  <div class="w3-display-topmiddle2" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ANA SOFIA UZSOY</span>
+  </div>
+
+
+  <div class="w3-display-topmiddle3">
+
+      <div class="w3-col m6 w3-center w3-display-container w3-padding-large">
+      <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
+<!--         <div class="w3-display">John Doe</div>
+ -->    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <p>I am an Astronomy PhD student at Harvard working at the intersection of astrophysics, statistics, and machine learning to help us harness the power of big data to better explore and understand the universe.</p>
+    </div>
+
   </div>
 </div>
 
 <!-- Container (About Section) -->
 
 
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>Science. Programming. Learning. </em></p>
-  <div class="w3-row">
+<!-- <div class="w3-content w3-container w3-padding-64" id="about">
+ --> 
 
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
-    </div>
 
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>My name is Ana Sofia, and I'm a senior at North Carolina State University studying physics and computer science. I'm interested in writing code to understand the world around us, and I love learning about everything.</p>
-    </div>
-  </div>
+
+ <div class="bgimg-1 w3-display-content w3-container w3-opacity-min w3-padding-64" id="about">
+
+  <div class="w3-center" style="white-space:nowrap;" id="about">
+
+    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ABOUT ME</span>
+
 </div>
+  <p class="w3-center w3-content"><em>I am a second-year PhD student in the <a href="https://astronomy.fas.harvard.edu/">Astronomy department</a> at <a href="https://www.cfa.harvard.edu/">Harvard</a> working with <a href="https://astronomy.fas.harvard.edu/people/douglas-finkbeiner">Prof. Doug Finkbeiner</a>. My current research involves developing statistical technqiues for spectral component separation and applying them to <a href="https://en.wikipedia.org/wiki/Lyman-alpha_emitter">Lyman-Alpha Emitter</a>  galaxies using the <a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument (DESI)</a>. My research interests broadly involve  astrostatistics and applications of statistical & machine learning for observational cosmology.</p>
 
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min" id="projects">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PROJECTS</span>
-  </div>
-</div>
+    <p class="w3-center w3-content"><em>In 2022, I graduated from the <a href="https://www.cam.ac.uk/">University of Cambridge</a> as a <a href="https://news.ncsu.edu/2021/04/nc-states-third-churchill-scholar-steps-toward-a-bright-future/">Churchill Scholar</a> with an M.Phil in <a href="https://www.mlmi.eng.cam.ac.uk/">Machine Learning and Machine Intelligence</a>, with the thesis "Scalable Bayesian Inference for Probabilistic Spectrotemporal Models of Type Ia Supernovae".</em></p>
 
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64">
-  <p class="w3-center">I've done work in machine learning, atmospheric science, computational biology, astrophysics, and more. <br> Click each image to learn more.</p><br>
+  <p class="w3-center w3-content"><em>In 2021, I graduated from  <a href="https://ncsu.edu">NC State University</a> as a <a href="https://park.ncsu.edu/">Park Scholar</a>, with a double major in physics and computer science and minors in math and music. While there, I was awarded a <a href="https://goldwaterscholarship.gov/">Goldwater Scholarship</a> and interned at NASA and Google.</em></p>
 
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3 w3-hover-opacity">
-      <img src="images/tensorflow.png" style="width:100%" onclick="onClick(this)" alt="During the summer of 2020, I completed a Software Engineering Internship at Google, where I worked on the TensorFlow and Kaggle teams. My project involved creating high-quality Kaggle notebook examples using TensorFlow 2, focusing on applying deep learning to Natural Language Processing (NLP). Over the course of my internship, I created 20 Kaggle notebooks demonstrating how to use machine learning for text classification, generation, and extraction. I also led the launch of a new multilingual NLP-focused competition on Kaggle (titled Contradictory My Dear Watson), and created TensorFlow code snippets that were incorporated into the Code Help section of the Kaggle Notebooks interface. ">
-    </div>
 
-    <div class="w3-col m3">
-      <img src="images/iss.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="In the summer of 2019, I interned at NASA Langley Research Center, working on SAGE III ISS (Stratospheric Aerosol & Gas Experiment III on the International Space Station). SAGE III is an experimental apparatus currently on the ISS that measures the components of Earth’s atmosphere. My project focused on developing a machine learning pipeline to identify cloud interference in measurements of stratospheric aerosol. The project involved creating machine learning algorithms in Python, training them on old data, and testing how accurately they recognized clouds in new data that they had never seen before. Eventually, this procedure will be incorporated into the official generalized data product for the instrument, and can be used to improve future analyses.">
-    </div>
+  <p class="w3-center w3-content"><em>In my work, I strive to be equal parts astrophysicist and data scientist.</em></p>
 
-    <div class="w3-col m3">
-      <img src="images/pombe.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="I am working with Dr. Mary Elting in the physics department at NC State on developing computational tools to automatically track the length of S. pombe (fission yeast). Yeast cells get longer as they grow and divide, and we're interested in measuring the length over time of the mitotic spindle, which pushes the chromosomes to the ends of the cell. I've developed an algorithm that measures the spindle length reliably in nearly every frame of a video of the cell dividing, and have implemented it in a plugin for ImageJ, an image processing software widely used in the biological sciences. This plugin allows a user to upload a video of a cell dividing, and outputs a file of the spindle length in each frame, all in seconds.">
-    </div>
 
-    <div class="w3-col m3">
-      <img src="images/exoplanet2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="I am working with Dr. Leslie Rogers in the Department of Astronomy and Astrophysics at the University of Chicago to calculate an updated mass and radius distribution for ultra-short period (USP) exoplanets. These unique planets have orbital periods, or “years”, less than 1 Earth day. These distributions could provide interesting clues as to the planets' formation mechanisms, as well as allow us to characterize a broad diversity of exoplanets.">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image" style="width:30%">
-    <p id="caption" class="w3-large"> </p>
-  </div>
 </div>
 
 
 <!-- Third Parallax Image with Skills Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min" id="skills">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">SKILLS</span>
-  </div>
+<div class="bgimg-2 w3-opacity-min w3-padding-64 w3-center"  id="cv">
+     <div class="w3-center">
+    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">CV & PUBLICATIONS</span>
+
 </div>
 
+	<!-- <p>Click here to download my <a href="Uzsoy_Resume.pdf">one-page resume</a>.</p> -->
+	<p>Click here to download my <a href="Uzsoy_CV.pdf">CV</a>.</p>
+    <p>You can view my publications on <a href="https://scholar.google.com/citations?user=kkJiaeMAAAAJ&hl=en">Google Scholar</a>, <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22uzsoy%2C%20a%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">NASA/ADS</a>, or <a href="https://orcid.org/0000-0001-9308-0449">ORCID</a>.</p>
 
-<!-- Fourth Parallax Image with Resume Text -->
-<div class="bgimg-4 w3-display-container w3-opacity-min" id="cv">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">RESUME</span>
-  </div>
-</div>
-
-
-<!-- Third Parallax Image with Skills Text -->
-<div class="w3-content w3-container w3-padding-64 w3-center">
-	<p>Click here to download my <a href="Uzsoy_Resume.pdf">one-page resume</a>.</p>
-	<p>Click here to download my <a href="Uzsoy_CV.pdf"> longer CV</a>.</p>
-</iframe> 
 </div>
 
 
 <!-- Fourth Parallax Image with Portfolio Text -->
-<div class="bgimg-5 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-black w3-wide">CONTACT</span>
-  </div>
+
+<div class="bgimg-2 w3-opacity-min w3-padding-64 w3-center" id="contact">
+<div class="w3-center">
+    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">CONTACT</span>
+
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <p class="w3-center"><b>I'd love to hear from you!</b></p>
-    <p class="w3-center">Feel free to send me an email at <a href = "mailto: amuzsoy@ncsu.edu.com">amuzsoy@ncsu.edu</a>, or find me on <a href="https://github.com/asmuzsoy">GitHub</a>, <a href="https://www.kaggle.com/anasofiauzsoy">Kaggle</a>, <a href="https://www.linkedin.com/in/anasofiauzsoy/">LinkedIn</a>, or <a href="https://twitter.com/asuzsoy">Twitter</a>.</p>
+  <p class="w3-center w3-content"><b>I'd love to hear from you!</b></p>
+    <p class="w3-center w3-content"><em>Feel free to send me an email at <a href = "mailto: ana_sofia.uzsoy@cfa.harvard.edu">ana_sofia.uzsoy@cfa.harvard.edu</a>, or find me on <a href="https://github.com/asmuzsoy">GitHub</a>, <a href="https://www.kaggle.com/anasofiauzsoy">Kaggle</a>, <a href="https://www.linkedin.com/in/anasofiauzsoy/">LinkedIn</a>, or <a href="https://twitter.com/asuzsoy">Twitter</a>.</em></p>
+
 </p>
 
 
   
 </div>
 
+
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+<footer class="w3-center bgimg-2 w3-padding-64 w3-opacity-min">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 <!--   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -260,6 +232,7 @@ ul {
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div> -->
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a> and myself.</p>
+  <p> Background image credit: T.A.Rector (NOIRLab/NSF/AURA) and Hubble Heritage Team (STScI/AURA/NASA)</p>
 </footer>
  
 <script>
