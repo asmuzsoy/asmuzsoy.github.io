@@ -23,6 +23,23 @@ body, html {
   background-size: cover;
 }
 
+.testimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:65%;
+  height:65%;
+}
+
+.side_textbox {
+  display: flex;
+  text-align: center;
+  width:40%;
+    position: absolute;
+  top: 26%;
+  left: 50%;
+}
+
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('images/horseheadx.jpg');
@@ -35,23 +52,6 @@ body, html {
   min-height: 400px;
 }
 
-/* Second image (Skills) */
-.bgimg-3 {
-  background-image: url("images/darkplot.jpg");
-  min-height: 400px;
-}
-
-/* Second image (Skills) */
-.bgimg-4 {
-  background-image: url("images/physics2.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-5 {
-  background-image: url("images/mail.jpg");
-  min-height: 400px;
-}
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
@@ -100,7 +100,8 @@ body, html {
        margin-left: 100px; 
 }
 .w3-display-topmiddle2{position:absolute;left:50%;top:25%;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
-.w3-display-topmiddle3{position:absolute;left:50%;top:35%;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-topmiddle3{position:absolute;left:50%;top:35%;transform:translate(-50%,0%);-ms-transform:translate(-50%,-50%);overflow:hidden;
+    text-overflow: ellipsis;}
 
 ul {
   columns: 3;
@@ -109,7 +110,7 @@ ul {
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
+@media only screen and (max-device-width: 1000px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 400px;
@@ -139,25 +140,47 @@ ul {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-topmiddle2" style="white-space:nowrap;">
+<!-- <div class="bgimg-1 w3-display-content w3-container w3-opacity-min w3-padding-64" id="home">
+  <div class="w3-display-topmiddle2 w3-center" style="white-space:nowrap;">
     <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ANA SOFIA UZSOY</span>
   </div>
 
 
-  <div class="w3-display-topmiddle3">
-
-      <div class="w3-col m6 w3-center w3-display-container w3-padding-large">
+  <div class="w3-display-topmiddle3 w3-container w3-margin-bottom">
+      <div class="w3-half w3-image">
       <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
-<!--         <div class="w3-display">John Doe</div>
- -->    </div>
+       </div>
 
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
+    <div class="w3-half w3-hide-small w3-padding-large w3-container:after">
       <p>I am an Astronomy PhD student at Harvard working at the intersection of astrophysics, statistics, and machine learning to help us harness the power of big data to better explore and understand the universe.</p>
     </div>
 
   </div>
+</div> -->
+
+<div class="bgimg-1 w3-display-container w3-container w3-padding-64 w3-opacity-min " id="home">
+  <h3 class="w3-center"> <span class="w3-margin-top w3-center w3-padding-large w3-padding-top64 w3-black w3-xlarge w3-wide w3-animate-opacity" style="top:25%">ANA SOFIA UZSOY</span></h3>
+  <p class="w3-center"><em>Astrophysics. Data Science. Machine Learning. </em></p>
+  <div class="w3-row">
+
+    <div class="w3-half">
+      <img src="images/nasapic.jpg" class="w3-round testimage" alt="Photo of Me" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-half w3-hide-small side_textbox">
+      <p>I'm Ana Sofia, and I'm a Astronomy PhD student at Harvard. I'm interested in writing code at the intersection of astrophysics, statistics, and machine learning.</p>
+    </div>
+  </div>
+
+  <div class="w3-center bgimg-2 w3-padding-64">
+
+    <a href="#about" class="w3-center w3-button w3-white"><i class="fa fa-arrow-down w3-margin-right"></i><em>Scroll to see more...</a>
+
+  </div>
 </div>
+
+
 
 <!-- Container (About Section) -->
 
@@ -167,21 +190,18 @@ ul {
 
 
 
- <div class="bgimg-1 w3-display-content w3-container w3-opacity-min w3-padding-64" id="about">
+ <div class="bgimg-1 w3-container w3-opacity-min w3-padding-64" id="about">
 
   <div class="w3-center" style="white-space:nowrap;" id="about">
 
     <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ABOUT ME</span>
 
 </div>
-  <p class="w3-center w3-content"><em>I am a second-year PhD student and <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellow</a> in the <a href="https://astronomy.fas.harvard.edu/">Astronomy department</a> at <a href="https://www.cfa.harvard.edu/">Harvard</a> working with <a href="https://astronomy.fas.harvard.edu/people/douglas-finkbeiner">Prof. Doug Finkbeiner</a>. My current research involves developing statistical technqiues for spectral component separation and applying them to <a href="https://en.wikipedia.org/wiki/Lyman-alpha_emitter">Lyman-Alpha Emitter</a>  galaxies using the <a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument (DESI)</a>. My research interests broadly involve  astrostatistics and applications of statistical & machine learning for observational cosmology.</p>
+  <p class="w3-center w3-content">I am a second-year PhD student and <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellow</a> in the <a href="https://astronomy.fas.harvard.edu/">Astronomy department</a> at <a href="https://www.cfa.harvard.edu/">Harvard</a> working with <a href="https://astronomy.fas.harvard.edu/people/douglas-finkbeiner">Prof. Doug Finkbeiner</a>. My current research involves developing statistical technqiues for spectral component separation and applying them to <a href="https://en.wikipedia.org/wiki/Lyman-alpha_emitter">Lyman-Alpha Emitter</a>  galaxies using the <a href="https://www.desi.lbl.gov/">Dark Energy Spectroscopic Instrument (DESI)</a>. My research interests broadly involve  astrostatistics and applications of statistical & machine learning for galaxies & Type Ia supernovae.</p>
 
-    <p class="w3-center w3-content"><em>In 2022, I graduated from the <a href="https://www.cam.ac.uk/">University of Cambridge</a> as a <a href="https://news.ncsu.edu/2021/04/nc-states-third-churchill-scholar-steps-toward-a-bright-future/">Churchill Scholar</a> with an M.Phil in <a href="https://www.mlmi.eng.cam.ac.uk/">Machine Learning and Machine Intelligence</a>, where I did research on <a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">variational inference</a> applications to Type Ia Supernova light curve fitting.</em></p>
+    <p class="w3-center w3-content">In 2022, I graduated from the <a href="https://www.cam.ac.uk/">University of Cambridge</a> as a <a href="https://news.ncsu.edu/2021/04/nc-states-third-churchill-scholar-steps-toward-a-bright-future/">Churchill Scholar</a> with an M.Phil in <a href="https://www.mlmi.eng.cam.ac.uk/">Machine Learning and Machine Intelligence</a>, where my thesis was on <a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">variational inference</a> applications to Type Ia supernova light curve fitting.</p>
 
-  <p class="w3-center w3-content"><em>In 2021, I graduated from  <a href="https://ncsu.edu">NC State University</a> as a <a href="https://park.ncsu.edu/">Park Scholar</a>, with a double major in physics and computer science and minors in math and music. While there, I was awarded a <a href="https://goldwaterscholarship.gov/">Goldwater Scholarship</a> and interned at NASA and Google.</em></p>
-
-
-  <p class="w3-center w3-content"><em>In my work, I strive to be equal parts astrophysicist and data scientist.</em></p>
+  <p class="w3-center w3-content">In my work, I strive to be equal parts astrophysicist and data scientist.</p>
 
 
 </div>
