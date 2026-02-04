@@ -1,303 +1,565 @@
 <!DOCTYPE html>
-<html>
-<title>Ana Sofia Uzsoy</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif; font-size: 25px}
-body, html {
-  height: 100%;
-  color: #FFF;
-  line-height: 1.8;
-  background-color: #000;
-}
+<html lang="en">
+<head>
+  <title>Ana Sofia Uzsoy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5{
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.testimage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:65%;
-  height:65%;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.8;
+      background-image: url('images/horseheadx.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      font-size: 24px;
+    }
 
-.side_textbox {
-  display: flex;
-  text-align: center;
-  width:40%;
-    position: absolute;
-  top: 26%;
-  left: 50%;
-}
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('images/horseheadx.jpg');
-  min-height: 100%;
-}
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("images/horseheadx.jpg");
-  min-height: 400px;
-}
+    a {
+      color: #a8c0ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d4e0ff;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #a8c0ff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
 
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
 
- /* The grid: Three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 50px;
-  text-align: center;
-  font-size: 25px;
-  cursor: pointer;
-  color: white;
-  border-style: solid;
-  border-color: black;
-  border-radius: 25px;
-  border-width: 10px;
-}
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
 
-.containerTab {
-  padding: 20px;
-  color: white;
-  border-style: solid;
-  border-color: black;
-  border-radius: 25px;
-  border-width: 10px;
-}
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: #a8c0ff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .hero-intro {
+      font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
 
-/* Closable button inside the image */
-.closebtn {
-  float: right;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-} 
+    .hero-image {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(168, 192, 255, 0.3);
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease;
+    }
 
-.tab { 
-       display:inline-block; 
-       margin-left: 100px; 
-}
-.w3-display-topmiddle2{position:absolute;left:50%;top:25%;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
-.w3-display-topmiddle3{position:absolute;left:50%;top:35%;transform:translate(-50%,0%);-ms-transform:translate(-50%,-50%);overflow:hidden;
-    text-overflow: ellipsis;}
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
 
-ul {
-  columns: 3;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-}
+    .scroll-indicator i {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1000px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #a8c0ff;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-content p {
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    .about-highlight {
+      background: linear-gradient(135deg, rgba(168, 192, 255, 0.1), rgba(168, 192, 255, 0.05));
+      border-left: 3px solid #a8c0ff;
+      padding: 1.5rem 2rem;
+      border-radius: 0 10px 10px 0;
+      text-align: left !important;
+      margin: 2rem 0;
+    }
+
+    /* CV Section */
+    .cv-section {
+      background: linear-gradient(180deg, transparent, rgba(168, 192, 255, 0.03), transparent);
+    }
+
+    .cv-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid rgba(168, 192, 255, 0.3);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .cv-link:hover {
+      background: rgba(168, 192, 255, 0.1);
+      border-color: #a8c0ff;
+      transform: translateY(-2px);
+    }
+
+    .cv-link.primary {
+      background: #a8c0ff;
+      color: #0a0a0a;
+      border-color: #a8c0ff;
+    }
+
+    .cv-link.primary:hover {
+      background: #d4e0ff;
+    }
+
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-email {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      margin: 2rem 0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(168, 192, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: rgba(168, 192, 255, 0.1);
+      border-color: #a8c0ff;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 5%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+        z-index: 1001;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      body {
+        background-attachment: scroll;
+      }
+
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .cv-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cv-link {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+
+      .social-links {
+        gap: 1rem;
+      }
+
+      .social-links a {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 1rem;
+      }
+
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      .about-highlight {
+        padding: 1rem 1.5rem;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#cv" onclick="closeMenu()">CV</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Ana Sofi&#769;a M. Uzsoy</h1>
+    <p class="hero-tagline">Astrophysics &bull; Data Science &bull; Machine Learning</p>
+    <img src="images/nasapic.jpg" alt="Ana Sofia Uzsoy" class="hero-image">
+    <p class="hero-intro">I'm an Astronomy PhD student at Harvard, writing code at the intersection of astrophysics, statistics, and machine learning.</p>
+  </div>
+  <div class="scroll-indicator">
+    <a href="#about"><i class="fas fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <p class="section-subtitle">About Me</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+    <p>
+      I am a fourth-year PhD candidate and <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellow</a> in the
+      <a href="https://astronomy.fas.harvard.edu/">Astronomy department</a> at <a href="https://www.cfa.harvard.edu/">Harvard</a>,
+      working with <a href="https://astronomy.fas.harvard.edu/people/douglas-finkbeiner">Prof. Doug Finkbeiner</a>.
+    </p>
+    <div class="about-highlight">
+      My research interests include galaxy spectra, Lyman-Alpha Emitters, galaxy-environment interactions, and applications of
+      statistical &amp; machine learning for extragalactic astrophysics.
+    </div>
+    <p>
+      In 2022, I graduated from the <a href="https://www.cam.ac.uk/">University of Cambridge</a> as a
+      <a href="https://news.ncsu.edu/2021/04/nc-states-third-churchill-scholar-steps-toward-a-bright-future/">Churchill Scholar</a>
+      with an M.Phil in <a href="https://www.mlmi.eng.cam.ac.uk/">Machine Learning and Machine Intelligence</a>, where my thesis
+      focused on variational inference applications to Type Ia supernova light curve fitting.
+    </p>
+    <p><em>In my work, I strive to be equal parts astrophysicist and data scientist.</em></p>
+  </div>
+</section>
+
+<!-- CV Section -->
+<section class="cv-section" id="cv">
+  <p class="section-subtitle">My work</p>
+  <h2 class="section-title">CV &amp; Publications</h2>
+  <div class="cv-links">
+    <a href="Uzsoy_CV.pdf" class="cv-link primary">
+      <i class="fas fa-file-pdf"></i> Download CV
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#cv" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-paperclip"></i> CV </a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="https://scholar.google.com/citations?user=kkJiaeMAAAAJ&hl=en" class="cv-link" target="_blank">
+      <i class="fas fa-graduation-cap"></i> Google Scholar
+    </a>
+    <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22uzsoy%2C%20a%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" class="cv-link" target="_blank">
+      <i class="fas fa-satellite"></i> NASA/ADS
+    </a>
+    <a href="https://orcid.org/0000-0001-9308-0449" class="cv-link" target="_blank">
+      <i class="fab fa-orcid"></i> ORCID
+    </a>
   </div>
+</section>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#cv" class="w3-bar-item w3-button" onclick="toggleFunction()">CV</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<!-- <div class="bgimg-1 w3-display-content w3-container w3-opacity-min w3-padding-64" id="home">
-  <div class="w3-display-topmiddle2 w3-center" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ANA SOFIA UZSOY</span>
-  </div>
-
-
-  <div class="w3-display-topmiddle3 w3-container">
-
-      <div class="w3-col m6 w3-center w3-display-container w3-padding-large">
-      <img src="images/nasapic.jpg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
-       </div>
-
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>I'm Ana Sofia, and I'm an Astronomy PhD student at Harvard. I'm interested in writing code at the intersection of astrophysics, statistics, and machine learning.</p>
-    </div>
-
-  </div>
-</div> -->
-
-<div class="bgimg-1 w3-display-container w3-container w3-padding-64 w3-opacity-min " id="home">
-  <h3 class="w3-center"> <span class="w3-margin-top w3-center w3-padding-large w3-padding-top64 w3-black w3-xlarge w3-wide w3-animate-opacity" style="top:25%">ANA SOFIA M. UZSOY</span></h3>
-  <p class="w3-center"><em>Astrophysics. Data Science. Machine Learning. </em></p>
-  <div class="w3-row">
-
-    <div class="w3-half">
-      <img src="images/nasapic.jpg" class="w3-round testimage" alt="Photo of Me" width="500" height="333">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-half w3-hide-small side_textbox">
-      <p>I'm Ana Sofia, and I'm an Astronomy PhD student at Harvard. I'm interested in writing code at the intersection of astrophysics, statistics, and machine learning.</p>
+<!-- Contact Section -->
+<section id="contact">
+  <p class="section-subtitle">Get in touch</p>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-content">
+    <p>I'd love to hear from you!</p>
+    <p class="contact-email">
+      <a href="mailto:ana_sofia.uzsoy@cfa.harvard.edu">ana_sofia.uzsoy@cfa.harvard.edu</a>
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/asmuzsoy" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.kaggle.com/anasofiauzsoy" target="_blank" title="Kaggle">
+        <i class="fab fa-kaggle"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/anasofiauzsoy/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
   </div>
-
-  <div class="w3-center bgimg-2 w3-padding-64">
-
-    <a href="#about" class="w3-center w3-button w3-white"><i class="fa fa-arrow-down w3-margin-right"></i><em>Scroll to see more...</a>
-
-  </div>
-</div>
-
-
-
-<!-- Container (About Section) -->
-
-
-<!-- <div class="w3-content w3-container w3-padding-64" id="about">
- --> 
-
-
-
- <div class="bgimg-1 w3-container w3-opacity-min w3-padding-64" id="about">
-
-  <div class="w3-center" style="white-space:nowrap;" id="about">
-
-    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">ABOUT ME</span>
-
-</div>
-     <p class="w3-center w3-content">I am a fourth-year PhD candidate and <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellow</a> in the <a href="https://astronomy.fas.harvard.edu/">Astronomy department</a> at <a href="https://www.cfa.harvard.edu/">Harvard</a> working with <a href="https://astronomy.fas.harvard.edu/people/douglas-finkbeiner">Prof. Doug Finkbeiner</a>.
-             My research interests include Lyman-Alpha Emitter galaxies, galaxy-environment interactions, and applications of statistical & machine learning for extragalactic astrophysics.</p>
-
-    <p class="w3-center w3-content">In 2022, I graduated from the <a href="https://www.cam.ac.uk/">University of Cambridge</a> as a <a href="https://news.ncsu.edu/2021/04/nc-states-third-churchill-scholar-steps-toward-a-bright-future/">Churchill Scholar</a> with an M.Phil in <a href="https://www.mlmi.eng.cam.ac.uk/">Machine Learning and Machine Intelligence</a>, where my thesis was on variational inference applications
-        to Type Ia supernova light curve fitting.</p>
-
-
-  <p class="w3-center w3-content">In my work, I strive to be equal parts astrophysicist and data scientist.</p>
-
-
-</ul>
-</div>
-
-
-<!-- Third Parallax Image with Skills Text -->
-<div class="bgimg-2 w3-opacity-min w3-padding-64 w3-center"  id="cv">
-     <div class="w3-center">
-    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">CV & PUBLICATIONS</span>
-
-</div>
-
-	<!-- <p>Click here to download my <a href="Uzsoy_Resume.pdf">one-page resume</a>.</p> -->
-	<p>Click here to download my <a href="Uzsoy_CV.pdf">CV</a>.</p>
-    <p>You can view my publications on <a href="https://scholar.google.com/citations?user=kkJiaeMAAAAJ&hl=en">Google Scholar</a>, <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22uzsoy%2C%20a%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">NASA/ADS</a>, or <a href="https://orcid.org/0000-0001-9308-0449">ORCID</a>.</p>
-
-</div>
-
-
-<!-- Fourth Parallax Image with Portfolio Text -->
-
-<div class="bgimg-2 w3-opacity-min w3-padding-64 w3-center" id="contact">
-<div class="w3-center">
-    <span class="w3-center w3-padding-large w3-padding-top32 w3-black w3-xlarge w3-wide w3-animate-opacity">CONTACT</span>
-
-</div>
-
-<!-- Container (Contact Section) -->
-  <p class="w3-center w3-content"><b>I'd love to hear from you!</b></p>
-    <p class="w3-center w3-content"><em>Feel free to send me an email at <a href = "mailto: ana_sofia.uzsoy@cfa.harvard.edu">ana_sofia.uzsoy@cfa.harvard.edu</a>, or find me on <a href="https://github.com/asmuzsoy">GitHub</a>, <a href="https://www.kaggle.com/anasofiauzsoy">Kaggle</a>, <a href="https://www.linkedin.com/in/anasofiauzsoy/">LinkedIn</a>, or <a href="https://twitter.com/asuzsoy">Twitter</a>.</em></p>
-
-</p>
-
-
-  
-</div>
-
+</section>
 
 <!-- Footer -->
-<footer class="w3-center bgimg-2 w3-padding-64 w3-opacity-min">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-<!--   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div> -->
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a> and myself.</p>
-  <p> Background image credit: T.A.Rector (NOIRLab/NSF/AURA) and Hubble Heritage Team (STScI/AURA/NASA)</p>
+<footer>
+  <p>Background image: T.A. Rector (NOIRLab/NSF/AURA) and Hubble Heritage Team (STScI/AURA/NASA)</p>
+  <p>&copy; 2024 Ana Sofia M. Uzsoy</p>
 </footer>
- 
+
 <script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-// Hide all elements with class="containerTab", except for the one that matches the clickable grid column
-function openTab(tabName) {
-  var i, x;
-  x = document.getElementsByClassName("containerTab");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
   }
-  document.getElementById(tabName).style.display = "block";
-} 
+});
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
+// Mobile menu toggle
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+  document.getElementById('navToggle').classList.toggle('active');
 }
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('active');
+  document.getElementById('navToggle').classList.remove('active');
 }
 </script>
 
